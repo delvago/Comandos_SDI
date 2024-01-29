@@ -1,4 +1,4 @@
-#include <SDI12.h>
+ #include <SDI12.h>
 
 #define SERIAL_BAUD 115200 /*!< The baud rate for the output serial port */
 #define DATA_PIN 25 /* D7 es gpio 13*         /*!< The pin of the SDI-12 data bus */
@@ -12,8 +12,9 @@ SDI12 mySDI12(DATA_PIN);
   'I' indicates that the command wants information about the sensor
   '!' finishes the command
 */
-String myCommand = "0A1!"; // Example response 0+1835.30+27.0+1
+//String myCommand = "0A2!"; // Example response 0+1835.30+27.0+1
                                              //address+VWC+Temperature+Conductivity
+String myCommand = "?!"; // Responde el Adress actual del sensor
 
 void setup() {
   Serial.begin(SERIAL_BAUD);
